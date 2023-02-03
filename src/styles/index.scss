@@ -292,12 +292,6 @@ input:checked~.tab__content {
     animation: block-moving 5s infinite alternate;
 }
 
-@keyframes block-moving {
-    from { left: 0px; } 
-    to { left: calc(100% - 50px); } 
-}
-
-
 
 @media screen and (max-width: 640px) {
     .wrapper {
