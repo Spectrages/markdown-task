@@ -1,28 +1,22 @@
 services:
   frontend:
-    env_file:
-      - .env
-    image: test:${VERSION}
+    image: test:latest
     ports: 
-      - ${FRONTEND_PORT}
+      - 3000:8080
+      
   db:
-    image: postgres:${VERSION}
+    image: postgres:latest
     container_name: local_pgdb
     env_file:
-      - .env
-    environment:
-      - POSTGRES_USER=POSTGRES_USER
-      - POSTGRES_PASSWORD=POSTGRES_PASSWORD
-      - POSTGRES_DB=POSTGRES_DB
+      - ./src/environment/db.env
+    volumes:
+      - ./data:/var/lib/postgresql/data
     ports:
-      - ${PGDB_PORT}:${PGDB_PORT}
+      - 5432:5432
 
   pgadmin:
-    image: dpage/pgadmin4:${VERSION}
+    image: dpage/pgadmin4:latest
     env_file:
-      - .env
-    environment:
-      PGADMIN_DEFAULT_EMAIL:  PGADMIN_DEFAULT_EMAIL
-      PGADMIN_DEFAULT_PASSWORD:  PGADMIN_DEFAULT_PASSWORD
+      - ./src/environment/pgadmin.env
     ports:
-      - ${PGADMIN_PORT}:${PGADMIN_SUBPORT}
+      - 7000:80

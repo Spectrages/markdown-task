@@ -194,7 +194,7 @@ nav>ul {
     width: 100%;
     overflow: hidden;
 
-    &__label{
+    &__label {
         display: flex;
         justify-content: space-between;
         padding: 15px;
@@ -203,7 +203,7 @@ nav>ul {
         cursor: pointer;
     }
 
-    &__label:hover{
+    &__label:hover {
         background: $red;
     }
 
@@ -282,9 +282,40 @@ input:checked~.tab__content {
     }
 }
 
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: block-moving 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes block-moving {
+    0% {
+        margin-left: 0%;
+    }
+    50% {
+        margin-left: 100%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes block-moving {
+   from{
+    margin-left: 100%;
+   }
+   to{
+    margin-left: 0%;
+   }
+  }
+
+
 @media screen and (max-width: 640px) {
     .wrapper {
         flex-direction: column;
+
         &__content {
             flex-direction: column-reverse;
             min-height: 100vh;
