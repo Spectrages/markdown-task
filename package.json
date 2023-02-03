@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "css-loader": "^6.7.3",
+    "docker-compose": "^0.23.18",
     "dotenv": "^16.0.3",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^8.0.0",

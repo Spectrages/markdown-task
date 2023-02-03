@@ -1,7 +1,2 @@
 
 //dckr_pat_9iCCQLaCLChW5BhUSowavWunzyI
-
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Spectrages/markdown-task"
-  }
