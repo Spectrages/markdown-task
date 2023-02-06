@@ -2,7 +2,6 @@ let direction = 'left';
 let i = 0;
 let square = document.querySelector(".square");
 let articleWidth = document.querySelector('.article').getBoundingClientRect().width;
-console.log('work')
 function move() {
     if(i > (articleWidth - 70)) {
       direction = 'right' 
