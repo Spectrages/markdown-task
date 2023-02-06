@@ -67,7 +67,8 @@ nav>ul {
     position: relative;
     background: $red;
     padding: 10px;
-    min-width: 200px;
+    width: 200px;
+    flex-grow: 1;
 
     &__wrapper {
         display: flex;
@@ -75,8 +76,10 @@ nav>ul {
         gap: 15px;
         padding: 15px 0;
         align-items: center;
+        justify-content: space-around;
         align-content: flex-start;
     }
+
 }
 
 .aside {
@@ -286,9 +289,23 @@ input:checked~.tab__content {
     width: 50px;
     height: 50px;
     background: lime;
-    animation: block-moving 5s infinite alternate;
     left: 0;
 }
+
+#square2 {
+    position: relative;
+    border: 2px solid green;
+    width: 50px;
+    height: 50px;
+    background: lime;
+    animation: block-moving 5s infinite alternate;
+}
+
+@keyframes block-moving {
+    from { transform: translate 0px; } 
+    to { transform: translateX(170px) } 
+}
+
 
 
 @media screen and (max-width: 640px) {

@@ -10,7 +10,7 @@ let width = [];
   }
 let i = 0;
 const arr = Array.from(myMap)
-console.log(arr)
+console.log('anim 1')
 
 function move() {
   for(let k = 0; k < arr.length; k++) {
