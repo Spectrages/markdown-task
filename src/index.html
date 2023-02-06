@@ -10,24 +10,6 @@
     <%= htmlWebpackPlugin.options.title %>
   </title>
   <link rel="stylesheet" href="./styles/index.css" />
-  <script>
-    console.log("I worked!")
-    const id = null;
-    function myMove() {
-      let elem = document.getElementById("square");
-      let pos = 0;
-      clearInterval(id)
-      id = setInterval(frame, 5)
-      function frame() {
-        if (pos == 350) {
-          clearInterval(id);
-        } else {
-          pos++;
-          elem.style.left = pos + 'px';
-        }
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -87,10 +69,23 @@
         </header>
         <div class="wrapper__content">
           <section class="article__wrapper">
+
+            <script src="./script/animation.js"></script>
+
             <article class="article">
-              <div class="square" id="square"></div>
+              <div class="square"></div>
             </article>
+
+            <article class="article">
+              <div class="square"></div>
+            </article>
+
+            <article class="article">
+              <div class="square"></div>
+            </article>
+
           </section>
+        
           <aside class="aside">
 
             <div class="tab">
