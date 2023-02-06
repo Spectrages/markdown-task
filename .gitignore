@@ -3,4 +3,3 @@ dist/
 data/
 *.txt
 package-lock.json
-package.json
