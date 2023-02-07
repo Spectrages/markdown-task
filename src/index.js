@@ -1,3 +1,6 @@
 import './styles/index.scss'
 import './script/animationSetInterval'
 import './script/animationFrame'
+import './script/app'
+import './script/worker'
+import './script/addedElem'

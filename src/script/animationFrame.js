@@ -1,21 +1,25 @@
 let square = document.getElementById("square3");
-let articleWidth = document.querySelector('.article').getBoundingClientRect().width;
-let animationRequest, previousTimeStamp;
-let start = null;
-const path = articleWidth - 65;
-let count;
+let articleWidth = document.querySelector('.article').clientWidth - 75;
+let rAF = window.requestAnimationFrame;
+let animationRequest;
+let timestamp = null;
+let speed = 50;
+let positionX = 0;
+let sumTime = 0;
 
+const move = (time) => {
+    animationRequest = rAF(move)
 
-const move = (timestamp) => {
-    if (!start) {
-        start = timestamp;
+    if (!timestamp) {
+        timestamp = time;
     }
-    animationRequest = window.requestAnimationFrame(move)
-    let progress = timestamp - start;
-    if (previousTimeStamp !== timestamp) {
-        count = Math.min(5 * progress/100, path);
-        square.style.transform = `translateX(${count}px)`;
+
+    positionX += speed * (timestamp/1000);
+    
+    square.style.transform = `translateX(${positionX}px)`;
+
+    if(positionX >= articleWidth || positionX <= 0) {
+        speed *= -1;
     }
-    console.log(previousTimeStamp === timestamp)
 }
-window.requestAnimationFrame(move)
+rAF(move);
