@@ -1,27 +1,15 @@
+import bigFunc from './bigFunc'
 
-/*
-const first = document.querySelector('#number1');
-const second = document.querySelector('#number2');
-const btn = document.getElementById('btn');
 
-const result = document.querySelector('.result');
-
-if (window.Worker) {
-    const worker = new Worker('worker.js')
-
-    first.onchange = function () {
-        worker.postMessage([first.value, second.value])
-    }
-
-    second.onchange = function () {
-        worker.postMessage([first.value, second.value])
-    }
-    worker.onmessage = function (e) {
-        result.textContent = e.data;
-        console.log('Message received from worker');
+const postMessage = 3_000_000_000;
+if(window.Worker) {
+    let worker = new Worker('worker.js', {type: "module"});
+    worker.postMessage('100');
+    worker.onmessage = (e) => {
+        //console.log(e.data)
     }
 } else {
-    console.log('Your browser doesn\'t support web workers.');
+    let res = bigFunc(postMessage);
+    //console.log(res);
 }
-
-*/
+//debugger;

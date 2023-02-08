@@ -64,11 +64,14 @@ nav>ul {
 }
 
 .article {
+    display: flex;
     position: relative;
     background: $red;
     padding: 10px;
     width: 200px;
+    height: 100px;
     flex-grow: 1;
+    justify-content: space-around;
 
     &__wrapper {
         display: flex;
@@ -80,6 +83,16 @@ nav>ul {
         align-content: flex-start;
     }
 
+}
+
+.article_pers {
+    display: flex;
+    position: relative;
+    width: 200px;
+    max-height: 100px;
+    flex-grow: 1;
+    justify-content: space-around;
+    background: $red;
 }
 
 .aside {
@@ -332,12 +345,17 @@ input:checked~.tab__content {
     background-color: gray;
 }
 
+.img{
+    display: flex;
+    border: 2px solid white;
+    border-radius: 2px;
+    max-width: 150px;
+}
+
 @keyframes block-moving {
     from { transform: translate 0px; } 
     to { transform: translateX(170px) } 
 }
-
-
 
 @media screen and (max-width: 640px) {
     .wrapper {
