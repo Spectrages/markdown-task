@@ -23,26 +23,25 @@ const findAndUpdate = (persons) => {
         list.innerHTML = ''
         let elem;
         if (event.target.value !== '') {
-            let reg = new RegExp(`(${event.target.value})\w*`)
+            let reg = new RegExp(`(${event.target.value})\w*`, 'gui');
 
             resultArray = persons.filter(item => item.name.match(reg)).slice(0, 10);
 
             resultArray.forEach((item) => {
                 elem = document.createElement('li')
                 elem.className = 'flowElem';
-                list.appendChild(elem)
+                list.appendChild(elem);
                 elem.innerHTML = item.name;
 
                 elem.addEventListener('click', (event) => {
                     article_pers.innerHTML = ''
                     let name = event.target.textContent;
-                    let newBlock = document.createElement('div')
+                    let newBlock = document.createElement('div');
                     newBlock.className = 'article_pers';
                     article_pers.appendChild(newBlock);
                     resultArray.forEach(item => {
                         if(item.name === name) {
                             let {name, gender, species, status, image} = item;
-                            console.log(item)
                             newBlock.innerHTML = `
                             Name: ${name} </br>
                             Gender: ${gender} </br>

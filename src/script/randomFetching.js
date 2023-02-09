@@ -8,19 +8,22 @@ const getRandomInt = (max) => {
 
 (async () => {
     let res = [];
-    for (let i = 0; i < 4; i++) {
-        let { data } = await axios.get(`https://rickandmortyapi.com/api/character/${getRandomInt(826)}`)
-        res.push(data)
+    const response = await axios.get('https://rickandmortyapi.com/api/character')
+    if(response) {
+        for (let i = 0; i < 4; i++) {
+            let { data } = await axios.get(`https://rickandmortyapi.com/api/character/${getRandomInt(response.data.info.count)}`);
+            res.push(data);
+        }
+        createBlocks(res);
     }
-    createBlocks(res);
 })()
 
 const createBlocks = (arr) => {
     arr.forEach((item) => {
-        let newBlock = document.createElement('div')
+        const newBlock = document.createElement('div');
         newBlock.className = 'article';
         article__wrapper.appendChild(newBlock);
-        let { name, gender, species, status, image } = item;
+        const { name, gender, species, status, image } = item;
         return newBlock.innerHTML = `
             Name: ${name} </br>
             Gender: ${gender} </br>

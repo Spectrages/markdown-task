@@ -3,6 +3,7 @@ import './script/animationSetInterval'
 import './script/animationFrame'
 import './script/fetching'
 import './script/randomFetching'
+
 import axios from 'axios'
 
 axios.interceptors.response.use((response) => {

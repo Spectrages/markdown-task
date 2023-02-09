@@ -1,5 +1,5 @@
 let square = document.getElementById("square3");
-let articleWidth = document.querySelector('.article').clientWidth - 75;
+let articleWidth = document.querySelector('.article').clientWidth - (square.getBoundingClientRect().width + 20);
 let rAF = window.requestAnimationFrame;
 let animationRequest;
 let timestamp = null;
