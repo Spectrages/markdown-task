@@ -5,7 +5,8 @@ const path = require('path');
 module.exports = {
     entry: {
         app: './src/index.ts',
-        worker: './src/script/workers/worker.ts',
+        workerQuickSort: './src/script/workers/workerQuickSort.ts',
+        workerHeapSort: './src/script/workers/workerHeapSort.ts',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -14,7 +15,7 @@ module.exports = {
             filename: "./index.html",
             template: "./src/index.html",
             title: 'Production',
-            excludeChunks: ['worker']
+            excludeChunks: ['workerQuickSort', 'workerHeapSort']
         }),
         new MiniCssExtractPlugin(),
     ],

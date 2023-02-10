@@ -1532,11 +1532,6 @@
   dependencies:
     "websocket-driver" ">=0.5.1"
 
-"fftw-js@^0.1.4":
-  "integrity" "sha512-Um5B7nR7yt1BliLZAoarQy+dBN0/n6MrSOvKSaIdWHAPg1CKEapoCNDr05z8CvviJQ3bzDpENAMyBFwxoL/NbA=="
-  "resolved" "https://registry.npmjs.org/fftw-js/-/fftw-js-0.1.4.tgz"
-  "version" "0.1.4"
-
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
   "resolved" "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"

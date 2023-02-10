@@ -1,6 +1,5 @@
-const article__wrapper: HTMLElement | null = document.getElementById('article__wrapper');
+const article__wrapper = document.getElementById('article__wrapper');
 import axios, { AxiosResponse } from 'axios'
-
 
 interface IPers {
     name: string,
@@ -8,6 +7,21 @@ interface IPers {
     species: string, 
     status: string, 
     image: string
+}
+const getRandomInt = (max: number) => Math.floor(Math.random() * max);
+
+const createBlocks = (item: IPers) => {
+    const newBlock: HTMLElement | null = document?.createElement('div');
+    newBlock.className = 'article';
+    article__wrapper?.appendChild(newBlock);
+    const { name, gender, species, status, image } = item;
+    return newBlock.innerHTML = `
+        Name: ${name} </br>
+        Gender: ${gender} </br>
+        Species: ${species} </br>
+        Status: ${status} </br>
+        <img src=${image} alt="альтернативный текст" class='img'/>
+        `;
 }
 
 (async () => {
@@ -21,19 +35,3 @@ interface IPers {
         res.forEach((item: IPers) => createBlocks(item));
     }
 })();
-
-const getRandomInt = (max: number) => Math.floor(Math.random() * max);
-
-const createBlocks = (item: IPers) => {
-    const newBlock: HTMLElement = document.createElement('div');
-    newBlock.className = 'article';
-    article__wrapper.appendChild(newBlock);
-    const { name, gender, species, status, image } = item;
-    return newBlock.innerHTML = `
-        Name: ${name} </br>
-        Gender: ${gender} </br>
-        Species: ${species} </br>
-        Status: ${status} </br>
-        <img src=${image} alt="альтернативный текст" class='img'/>
-        `;
-}
